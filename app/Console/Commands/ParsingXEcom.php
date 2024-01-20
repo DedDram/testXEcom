@@ -84,6 +84,7 @@ class ParsingXEcom extends Command
                 $exchange = new Exchange();
                 $exchange->currency_name_id = $currencyIds[$key];
                 $exchange->course = $value;
+                $exchange->timestamp = time();
                 $exchange->save();
             }
         }

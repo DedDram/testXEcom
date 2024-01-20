@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->tinyInteger('currency_name_id')->index();
             $table->decimal('course', 15, 10);
-            $table->timestamp('timestamp')->useCurrent()->index();
+            $table->integer('timestamp')->index();
         });
     }
 

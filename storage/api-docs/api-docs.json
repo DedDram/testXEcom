@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "XE.com API",
+        "description": "API for XE.com",
+        "contact": {
+            "email": "info@xe.com"
+        },
+        "license": {
+            "name": "License",
+            "url": "http://www.xe.com/license"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/course": {
+            "post": {
+                "tags": [
+                    "course"
+                ],
+                "summary": "POST exchange rate",
+                "operationId": "6f8184a4e9705f1cb296769c9c77fc3c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "from": {
+                                        "type": "string",
+                                        "example": "RUB"
+                                    },
+                                    "to": {
+                                        "type": "string",
+                                        "example": "EUR"
+                                    },
+                                    "amount": {
+                                        "type": "integer",
+                                        "example": "100"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "course": {
+                                            "type": "number",
+                                            "example": 1.04027579745366
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
